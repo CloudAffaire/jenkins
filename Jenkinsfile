@@ -8,6 +8,7 @@ pipeline {
             steps {
                 sh 'pwd'
                 sh 'ls -l'
+                sh 'ls -l MyCustomDir'
             }
         }
     }

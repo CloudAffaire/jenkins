@@ -1,22 +1,14 @@
 pipeline {
-         agent { 
-                label 'test' 
-               }
-         stages {
-                 stage('Build') {
-                                steps {
-                                    echo 'building your app!'
-                                }
-                 }
-                 stage('Test') {
-                                steps {
-                                    echo 'testing your app!'
-                                }
-                 }
-                 stage('Deploy') {
-                                  steps {
-                                        echo 'deploying your app!'
-                                  }
-                 }
-              }
+    agent { label 'test' }
+    options {
+        checkoutToSubdirectory('MyCustomDir')
+    }
+    stages {
+        stage('checkout') {
+            steps {
+                sh 'pwd'
+                sh 'ls -l'
+            }
+        }
+    }
 }

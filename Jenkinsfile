@@ -2,7 +2,7 @@ pipeline {
     agent { label 'test' }
     options {
 	timestamps()
-	overrideIndexTriggers(true)
+	overrideIndexTriggers(false)
     }
     stages {
         stage('Hello') {

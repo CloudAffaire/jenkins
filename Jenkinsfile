@@ -1,14 +1,14 @@
 pipeline {
     agent { label 'test' }
     options {
-        checkoutToSubdirectory('MyCustomDir')
+	timestamps()
+	overrideIndexTriggers(false)
     }
     stages {
-        stage('checkout') {
+        stage('Hello') {
             steps {
-                sh 'pwd'
-                sh 'ls -l'
-                sh 'ls -l MyCustomDir'
+                echo 'Hello World!'
+        	echo env.BRANCH_NAME
             }
         }
     }

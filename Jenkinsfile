@@ -1,13 +1,12 @@
 pipeline {
     agent { label 'test' }
-    options {
-	timestamps()
-	overrideIndexTriggers(true)
+    triggers {
+        pollSCM('* * * * *')
     }
     stages {
-        stage('Hello') {
+        stage('hello') {
             steps {
-                echo 'Hello World!'
+                echo "Hello World!"
             }
         }
     }
